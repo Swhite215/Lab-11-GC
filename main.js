@@ -23,6 +23,9 @@ $(document).ready(function() {
       var author = $("<h3>").text(array[i].data.author);
       $("body").append(author);
 
+      //linking to reddit page
+      // var picLink = $("<a>").attr("href", title.text(array[i].data.title);
+      
      //this code puts the image on the page
       var image = $("<img>").attr("src", imgSource).attr("height", "100px").attr("width", "100px");
       $("body").append(image);
