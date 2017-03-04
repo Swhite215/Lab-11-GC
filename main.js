@@ -26,7 +26,7 @@ $(document).ready(function() {
 
      //this code puts the image on the page
       var imgSource = array[i].data.preview.images[0].source.url;
-      var image = $("<img>").attr("src", imgSource).attr("height", "100px").attr("width", "100px");
+      var image = $("<img>").attr("src", imgSource).attr("height", "300px").attr("width", "300px");
       $("div.redditApi").append(image);
 
     }
