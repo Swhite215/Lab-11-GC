@@ -2,6 +2,7 @@
 $(document).ready(function() {
    $.get("https://www.reddit.com/r/awww/.json").done(function(responseBody) {
 
+     //Create array to store response array from get request.
      var array = responseBody.data.children;
 
     //  array[i].data.author gives us author
@@ -10,25 +11,23 @@ $(document).ready(function() {
     //  array[i].data.title gives us title
     //  console.log(array[i].data.title);
 
+    //  array[i].data.preview.images[0].source.url gives us image url
+    //  console.log(array[i].data.preview.images[0].source.url);
+
     //for loop for moving through the array.
      for (var i = 0; i < 10; i++) {
-     //array[i].data.preview.images[0].source.url gives us image url
-      var imgSource = array[i].data.preview.images[0].source.url;
-
      //this code puts that title onto the body using append
       var title = $("<h1>").text(array[i].data.title);
-      $("body").append(title);
+      $("div.redditApi").append(title);
 
      //this code puts the authors name onto the body using append
       var author = $("<h3>").text(array[i].data.author);
-      $("body").append(author);
+      $("div.redditApi").append(author);
 
-      //linking to reddit page
-      // var picLink = $("<a>").attr("href", title.text(array[i].data.title);
-      
      //this code puts the image on the page
+      var imgSource = array[i].data.preview.images[0].source.url;
       var image = $("<img>").attr("src", imgSource).attr("height", "100px").attr("width", "100px");
-      $("body").append(image);
+      $("div.redditApi").append(image);
 
     }
    });
